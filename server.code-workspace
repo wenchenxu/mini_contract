@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "../server"
+		},
+		{
+			"path": "../miniprogram-2"
+		}
+	],
+	"settings": {}
+}
