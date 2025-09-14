@@ -1,10 +1,12 @@
 {
 	"folders": [
 		{
-			"path": "../server"
+			"name:": "server",
+			"path": "./server"
 		},
 		{
-			"path": "../miniprogram-2"
+			"name": "frontend",
+			"path": "./frontend"
 		}
 	],
 	"settings": {}
