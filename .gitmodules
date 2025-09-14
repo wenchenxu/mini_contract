@@ -1,6 +1,6 @@
 [submodule "server"]
 	path = server
-	url = https://git.weixin.qq.com/wx_wx69a2de4846371ca1/contractServer.git
+	url = https://github.com/wenchenxu/mp_server.git
 [submodule "frontend"]
 	path = frontend
-	url = https://git.weixin.qq.com/wx_wx69a2de4846371ca1/contractFE.git
+	url = https://github.com/wenchenxu/mp_frontend.git
