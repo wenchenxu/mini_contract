@@ -1,11 +1,17 @@
 {
 	"folders": [
 		{
+<<<<<<< Updated upstream
 			"name:": "server",
 			"path": "./server"
 		},
 		{
 			"name": "frontend",
+=======
+			"path": "./server"
+		},
+		{
+>>>>>>> Stashed changes
 			"path": "./frontend"
 		}
 	],
