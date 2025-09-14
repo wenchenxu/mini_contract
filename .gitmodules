@@ -1,6 +1,3 @@
-[submodule "contractServer"]
-	path = contractServer
-	url = https://git.weixin.qq.com/wx_wx69a2de4846371ca1/contractServer.git
 [submodule "server"]
 	path = server
 	url = https://git.weixin.qq.com/wx_wx69a2de4846371ca1/contractServer.git
