@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "miniprogram/pages/index/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "合同生成器",
+    "navigationBarBackgroundColor": "#2d8cf0",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f5f7fa"
+  },
+  "style": "v2"
+}

@@ -1,0 +1,14 @@
+page {
+  background: #f5f7fa;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+button.primary {
+  background-color: #2d8cf0;
+  color: #ffffff;
+}
+
+button.danger {
+  background-color: #ff4d4f;
+  color: #ffffff;
+}

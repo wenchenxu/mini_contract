@@ -1,0 +1,61 @@
+<view class="container">
+  <view class="section" wx:if="{{userRole !== 'admin'}}">
+    <view class="section-title">填写合同信息</view>
+    <form bindsubmit="handleSubmit">
+      <view class="field">
+        <text class="label">城市</text>
+        <input class="input" data-field="city" bindinput="handleFieldChange" placeholder="请输入城市" value="{{form.city}}" />
+      </view>
+      <view class="field">
+        <text class="label">地址</text>
+        <input class="input" data-field="address" bindinput="handleFieldChange" placeholder="请输入详细地址" value="{{form.address}}" />
+      </view>
+      <view class="field">
+        <text class="label">司机姓名</text>
+        <input class="input" data-field="driverName" bindinput="handleFieldChange" placeholder="请输入司机姓名" value="{{form.driverName}}" />
+      </view>
+      <view class="field">
+        <text class="label">身份证号</text>
+        <input class="input" data-field="idNumber" bindinput="handleFieldChange" placeholder="请输入身份证号" value="{{form.idNumber}}" />
+      </view>
+      <view class="field">
+        <text class="label">出生日期</text>
+        <picker mode="date" value="{{form.birthday}}" bindchange="handleDateChange">
+          <view class="picker-value">{{form.birthday || '请选择出生日期'}}</view>
+        </picker>
+      </view>
+      <view class="field">
+        <text class="label">其他备注</text>
+        <textarea class="textarea" data-field="extraNotes" bindinput="handleFieldChange" placeholder="可选" value="{{form.extraNotes}}" auto-height />
+      </view>
+      <view class="actions">
+        <button form-type="submit" class="primary" loading="{{loading}}" disabled="{{loading}}">
+          {{editingId ? '更新合同并重新生成 PDF' : '生成合同 PDF'}}
+        </button>
+        <button type="default" bindtap="handleReset" plain>重置</button>
+      </view>
+    </form>
+  </view>
+  <view class="section" wx:elif="{{userRole === 'admin'}}">
+    <view class="section-title">管理员模式</view>
+    <view class="description">管理员仅支持查看和删除合同，无法创建或修改合同。</view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">合同列表</view>
+    <view wx:if="{{contracts.length === 0}}" class="empty">暂无合同</view>
+    <block wx:for="{{contracts}}" wx:key="_id">
+      <view class="contract-card">
+        <view class="meta">
+          <view class="title">{{item.driverName}} · {{item.city}}</view>
+          <view class="subtitle">创建时间：{{item.createdAtDisplay}}</view>
+        </view>
+        <view class="card-actions">
+          <button size="mini" data-id="{{item._id}}" data-url="{{item.pdfUrl}}" bindtap="handleDownload" type="default" class="primary" plain>下载 PDF</button>
+          <button wx:if="{{userRole !== 'admin'}}" size="mini" data-id="{{item._id}}" bindtap="handleEdit">编辑</button>
+          <button size="mini" data-id="{{item._id}}" bindtap="handleDelete" class="danger">删除</button>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
