@@ -1,6 +1,0 @@
-[submodule "server"]
-	path = server
-	url = https://github.com/wenchenxu/mp_server.git
-[submodule "frontend"]
-	path = frontend
-	url = https://github.com/wenchenxu/mp_frontend.git
